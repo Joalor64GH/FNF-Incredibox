@@ -223,7 +223,7 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
 			//pq cacetas o dialogo n ta indo????
 
-				case 'alpha':
+				/*case 'alpha':
 					if(FlxG.save.data.traduzido == true)
 						dialogue = CoolUtil.coolTextFile(Paths.txt('alpha/dialogo'));
 					if(FlxG.save.data.traduzido == false)
@@ -267,7 +267,7 @@ class PlayState extends MusicBeatState
 					if(FlxG.save.data.traduzido == true)
 						dialogue = CoolUtil.coolTextFile(Paths.txt('synthwave-little-miss/dialogo'));
 					if(FlxG.save.data.traduzido == false)
-						dialogue = CoolUtil.coolTextFile(Paths.txt('synthwave-little-miss/dialogue'));
+						dialogue = CoolUtil.coolTextFile(Paths.txt('synthwave-little-miss/dialogue'));*/
 		}
 
 		#if desktop
@@ -1353,7 +1353,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
-				case 'alpha':
+				/*case 'alpha':
 					schoolIntro(doof);
 				case 'little-miss':
 					schoolIntro(doof);
@@ -1370,7 +1370,7 @@ class PlayState extends MusicBeatState
 				case 'dystopia':
 					schoolIntro(doof);
 				case 'synthwave-little-miss':
-					schoolIntro(doof);
+					schoolIntro(doof);*/
 				default:
 					startCountdown();
 			}
@@ -3124,7 +3124,7 @@ class PlayState extends MusicBeatState
 	{
 		if (!boyfriend.stunned)
 		{
-			health -= 0.04;
+			health -= 0.01;
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 			{
 				gf.playAnim('sad');
