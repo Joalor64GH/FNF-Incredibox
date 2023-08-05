@@ -41,6 +41,7 @@ import lime.utils.Assets;
 import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
+import Character;
 
 using StringTools;
 
@@ -2666,9 +2667,7 @@ class PlayState extends MusicBeatState
 		vocals.volume = 0;
 		if (SONG.validScore)
 		{
-			#if !switch
 			Highscore.saveScore(SONG.song, songScore, storyDifficulty);
-			#end
 		}
 
 		if (isStoryMode)
@@ -2691,7 +2690,6 @@ class PlayState extends MusicBeatState
 
 				if (SONG.validScore)
 				{
-					NGio.unlockMedal(60961);
 					Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 				}
 

@@ -14,7 +14,6 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import io.newgrounds.NG;
 import lime.app.Application;
 
 using StringTools;
@@ -37,9 +36,9 @@ class MainMenuState extends MusicBeatState
 	//var menuItemsBr:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['story mode', 'freeplay', 'donate'];
+	var optionShit:Array<String> = ['story mode', 'freeplay', 'donate', 'options'];
 	#else
-	var optionShit:Array<String> = ['story mode', 'freeplay'];
+	var optionShit:Array<String> = ['story mode', 'freeplay', 'options'];
 	#end
 
 	var magenta:FlxSprite;
@@ -271,8 +270,6 @@ class MainMenuState extends MusicBeatState
 										trace("Freeplay Menu Selected");
 
 									case 'options':
-										FlxTransitionableState.skipNextTransIn = true;
-										FlxTransitionableState.skipNextTransOut = true;
 										FlxG.switchState(new OptionsMenu());
 								}
 							});

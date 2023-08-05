@@ -6,6 +6,7 @@ import flixel.FlxSubState;
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import Character;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
@@ -20,10 +21,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		var daBf:String = '';
 		switch (daStage)
 		{
-			case 'school':
-				stageSuffix = '-pixel';
-				daBf = 'bf-pixel-dead';
-			case 'schoolEvil':
+			case 'school' | 'schoolEvil':
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
 			default:

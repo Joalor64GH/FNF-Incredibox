@@ -352,10 +352,6 @@ class StoryMenuState extends MusicBeatState
 		sprDifficulty.y = leftArrow.y - 15;
 		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty);
 
-		#if !switch
-		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty);
-		#end
-
 		FlxTween.tween(sprDifficulty, {y: leftArrow.y + 15, alpha: 1}, 0.07);
 	}
 

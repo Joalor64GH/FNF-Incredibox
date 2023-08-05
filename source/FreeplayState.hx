@@ -121,23 +121,6 @@ class FreeplayState extends MusicBeatState
 
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
 
-		// JUST DOIN THIS SHIT FOR TESTING!!!
-		/* 
-			var md:String = Markdown.markdownToHtml(Assets.getText('CHANGELOG.md'));
-
-			var texFel:TextField = new TextField();
-			texFel.width = FlxG.width;
-			texFel.height = FlxG.height;
-			// texFel.
-			texFel.htmlText = md;
-
-			FlxG.stage.addChild(texFel);
-
-			// scoreText.textField.htmlText = md;
-
-			trace(md);
-		 */
-
 		super.create();
 	}
 
@@ -279,11 +262,6 @@ class FreeplayState extends MusicBeatState
 
 	function changeSelection(change:Int = 0)
 	{
-		#if !switch
-		NGio.logEvent('Fresh');
-		#end
-
-		// NGio.logEvent('Fresh');
 		FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 
 		curSelected += change;

@@ -32,50 +32,44 @@ class OptionsMenu extends MusicBeatState
 		menuBG.antialiasing = true;
 		add(menuBG);
 
-		/* 
-			grpControls = new FlxTypedGroup<Alphabet>();
-			add(grpControls);
+		grpControls = new FlxTypedGroup<Alphabet>();
+		add(grpControls);
 
-			for (i in 0...controlsStrings.length)
+		for (i in 0...controlsStrings.length)
+		{
+			if (controlsStrings[i].indexOf('set') != -1)
 			{
-				if (controlsStrings[i].indexOf('set') != -1)
-				{
-					var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, controlsStrings[i].substring(3) + ': ' + controlsStrings[i + 1], true, false);
-					controlLabel.isMenuItem = true;
-					controlLabel.targetY = i;
-					grpControls.add(controlLabel);
-				}
-				// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
+				var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, controlsStrings[i].substring(3) + ': ' + controlsStrings[i + 1], true, false);
+				controlLabel.isMenuItem = true;
+				controlLabel.targetY = i;
+				grpControls.add(controlLabel);
 			}
-		 */
+			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
+		}
 
 		super.create();
-
-		openSubState(new OptionsSubState());
 	}
 
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 
-		/* 
-			if (controls.ACCEPT)
-			{
-				changeBinding();
-			}
+		if (controls.ACCEPT)
+		{
+			changeBinding();
+		}
 
-			if (isSettingControl)
-				waitingInput();
-			else
-			{
-				if (controls.BACK)
-					FlxG.switchState(new MainMenuState());
-				if (controls.UP_P)
-					changeSelection(-1);
-				if (controls.DOWN_P)
-					changeSelection(1);
-			}
-		 */
+		if (isSettingControl)
+			waitingInput();
+		else
+		{
+			if (controls.BACK)
+				FlxG.switchState(new MainMenuState());
+			if (controls.UP_P)
+				changeSelection(-1);
+			if (controls.DOWN_P)
+				changeSelection(1);
+		}
 	}
 
 	function waitingInput():Void
